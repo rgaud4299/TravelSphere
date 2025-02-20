@@ -1,0 +1,42 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-10 col-md-7 col-lg-5">
+      <h2 class="text-center mb-4">Login on Online Booking</h2>
+      <form method="post" action="/login" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input 
+            name="username" 
+            placeholder="Enter your username" 
+            id="username" 
+            type="text" 
+            class="form-control" 
+            required
+          />
+          <div class="invalid-feedback">
+            Please enter your username.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input 
+            name="password" 
+            placeholder="Enter your password" 
+            id="password" 
+            type="password" 
+            class="form-control" 
+            required
+          />
+          <div class="invalid-feedback">
+            Please enter your password.
+          </div>
+        </div>
+        <div class="d-grid">
+          <button class="btn btn-success" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

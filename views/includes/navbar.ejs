@@ -1,0 +1,171 @@
+
+<style>
+  /* Custom Search Button */
+  .btn-search {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-search i {
+    margin-right: 0.5rem;
+  }
+
+  /* Hover Effect */
+  .btn-search:hover {
+    background-color: #d82c38; /* Darker red */
+    color: #fff;
+  }
+
+  /* Search Input */
+  .search {
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .search:focus {
+    border-color: #fe424d;
+    box-shadow: 0 0 8px rgba(254, 66, 77, 0.5);
+  }
+
+  /* Navbar Styling */
+  .navbar {
+    background-color: #a8e2e4 !important; /* Ensures proper contrast */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.7rem 1rem;
+  }
+
+  /* Navbar Brand Styling */
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: #4c6dfc !important;
+    font-weight: bold;
+  }
+
+  /* Nav Links */
+  .navbar-nav .nav-link {
+    font-weight: bold;
+    color: #2c27c5 !important;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #f403e8 !important;
+  }
+
+  /* Adjust Navbar for Small Screens */
+   @media (max-width: 768px) {
+    .nav1 {
+      margin-inline-start:auto;
+      border-top-left-radius: 5%;
+      border-top-right-radius: 5%;
+    }
+    .nav2 {
+      
+      
+      border-bottom-left-radius: 5%;
+      border-bottom-right-radius: 5%;
+    }
+    .navbar-collapse{
+      margin-top: 30px;
+    }
+    .navbar-nav{
+      
+      width: 40%;
+      background-color: rgb(211, 239, 239);
+      text-align: center;
+    }
+    .navbar-nav .nav-link {
+      margin-bottom: 0.5rem;
+    }
+
+   
+  } 
+
+  /* Search Input Styling */
+.search {
+  padding: 0.5rem 1.5rem; /* Padding for a clean look */
+  border-radius: 25px; /* Rounded edges */
+  border: 1px solid #ccc; /* Subtle border */
+  outline: none; /* Remove default focus outline */
+  transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.search:focus {
+  border-color: #fe424d; /* Focus color */
+  box-shadow: 0 0 5px rgba(254, 66, 77, 0.5); /* Subtle glow */
+}
+
+/* Search Button Styling */
+.btn-search {
+  background-color: #fe424d; /* Red background */
+  color: #fff; /* White text */
+  border-radius: 25px; /* Rounded button */
+  padding: 0.5rem 1.5rem; /* Button padding */
+  display: flex;
+  align-items: center; /* Center icon and text vertically */
+  border: none; /* Remove default border */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-search i {
+  margin-right: 0.5rem; /* Space between icon and text */
+}
+
+.btn-search:hover {
+  background-color: #d82c38; /* Darker red on hover */
+  color: #fff; /* Ensure text remains white */
+}
+
+</style>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- Navbar Brand (Logo) -->
+    <a class="navbar-brand" href="/listing">
+      <i class="fa-solid fa-compass"></i> TravelSphere
+    </a>
+
+    <!-- Navbar Toggler (Mobile View) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div class="navbar-nav nav1">
+        <a class="nav-link" href="/listing"><b>Home</b></a>
+      </div>
+
+      <!-- Search Bar (Hidden on Mobile, Visible on Tablets & Larger Screens) -->
+      <div class="navbar-nav ms-auto d-none d-md-flex">
+        <form class="d-flex align-items-center" role="search">
+          <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-search" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+        </form>
+      </div>
+
+      <!-- Authentication Links -->
+      <div class="navbar-nav ms-auto nav2">
+        <a class="nav-link" href="/listing/new"><b>Create New</b></a>
+        <% if(!currUser){ %>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %>
+
+        <% if(currUser){ %>
+          <a class="nav-link" href="/logout"><b>Log Out</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
