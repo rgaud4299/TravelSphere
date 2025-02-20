@@ -6,6 +6,285 @@ flex-direction: column  ;
 min-height: 100vh !important;
 background-color: rgb(210, 224, 241) !important;
 }
+body{
+    font-family: "Plus Jakarta Sans", serif !important;
+display: flex ;
+flex-direction: column  ;
+min-height: 100vh !important;
+background-color: rgb(210, 224, 241) !important;
+}
+.navbar {
+    height: 5rem  ;
+    background-color: #48dbe0 !important  ;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/*  footer*/
+.f-info-link a {
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-link,.info-social,.f-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-social i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.f-info-link a{
+    margin-right: 0.5rem;
+}
+.f-info-link a:hover {
+    text-decoration: underline;
+}
+.container {
+    flex: 1; /* Pushes the footer to the bottom */
+}
+.f-info {
+    text-align: center;
+    height: 8rem;
+    /* background-color: #ebebeb; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+#footer-bg{
+    background-color: rgb(55, 55, 55) !important;
+    color: aliceblue;
+        }
+
+/* cards */
+ .listing-card{
+    margin-bottom: 2rem !important;
+    border: none !important;
+   
+}
+.card-img-top{
+    border-radius:1rem !important ;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text p{    
+    font-weight: 400 !important;
+}
+.listing-link{
+   text-decoration: none !important;
+} 
+/* card effect/overlay */
+.card-img-overlay{
+    opacity: 0;
+}
+
+/* new page  */
+.add-btn{
+    background-color: #fe424d !important;
+    color: black !important;
+    border: none !important;
+    font-weight: 450 !important;
+}
+/* show page */
+.show-img{
+   height: 30vh; 
+}
+.btns{
+    display: flex !important;
+
+}
+.show-text{
+    color: rgb(17, 26, 208) !important;
+    font-weight: 700;
+}
+.show-text P{
+    color: rgb(15, 136, 181) !important;
+    font-weight: 900;
+}
+.show-card{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.error,.signup{
+    height: 68vh !important;
+}
+
+.textarea-bg{
+    background-color: rgb(207, 214, 214) !important;
+}
+
+.review-bg{
+    background-color: rgb(155, 174, 166) !important;
+}
+
+/* gpt */
+/* image */
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+    background: rgba(226, 16, 16, 0); /* Transparent by default */
+    z-index: 1;
+    color: rgb(244, 243, 243); /* Ensures text remains visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Hidden initially */
+}
+
+
+.card-img-overlay:hover {
+    transform: scale(1.04); /* Adds a subtle zoom effect */
+    transition: all 0.5s ease-in-out;
+}
+
+/* Ensuring smooth transition for any image below the overlay */
+.card img {
+    transition: transform 0.5s ease-in-out;
+}
+
+.card:hover img { 
+    transform: scale(1.05);
+ }
+
+/* card  */
+
+  /* General Styling for Cards */
+  .listing-card {
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 25px;
+    /* overflow: hidden; */
+    background:none !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+    background: rgba(226, 16, 16, 0); 
+    z-index: 1;
+  }
+
+  .listing-card:hover {
+    transform: scale(1.03); 
+    transition: all 0.5s ease-in-out;
+}
+
+  /* Card Body */
+  
+  .listing-card .card-body {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  /* Card Text */
+  .listing-card .card-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+ .listing-card .card-text b {
+    color: #fe424d;
+    font-size: 1.2rem;
+  } 
+
+  .listing-card .taxinfo {
+    font-size: 0.8rem;
+    color: #999;
+    font-weight: 500;
+  } 
+
+
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .listing-card img {
+      height: 15rem;
+    }
+.show-hover img{
+    width:100% !important ;
+}
+    .listing-card .card-text b {
+      font-size: 1rem;
+    }
+  }
+
+
+/* show */
+.show-hover:hover{
+    transform: none !important; /* Adds a subtle zoom effect */
+    transition: none !important;
+}
+.show-hover:hover img{
+    transform: none !important; /* Adds a subtle zoom effect */
+    transition: none !important;
+}
+
+/*  show btn */
+ /* Custom Button Styling */
+ .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Space between buttons */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .btns .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btns .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(239, 50, 50, 0.2);
+  }
+
+  /* Specific Button Colors */
+  .btn-edit {
+    background-color: #fe424d !important;
+    color: black !important;
+    border: none !important;
+  }
+
+  .btn-delete {
+    background-color: #fe424d;
+    color: #fff;
+    border: none;
+  }
+
+  .btn-delete:hover {
+    background-color: #d82c38; /* Darker red */
+  }
+
+  /* review */
+  
+  .preview{
+   img{
+    height: 8rem;
+    width: 10rem;
+   }
+  }
+
 .navbar {
     height: 5rem  ;
     background-color: #48dbe0 !important  ;
