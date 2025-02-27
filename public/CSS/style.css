@@ -101,11 +101,11 @@ background-color: rgb(210, 224, 241) !important;
 
 }
 .show-text{
-    color: rgb(17, 26, 208) !important;
+    color: rgb(23, 23, 25) !important;
     font-weight: 700;
 }
 .show-text P{
-    color: rgb(15, 136, 181) !important;
+    color: rgb(7, 29, 37) !important;
     font-weight: 900;
 }
 .show-card{
@@ -117,13 +117,17 @@ background-color: rgb(210, 224, 241) !important;
 }
 
 .textarea-bg{
-    background-color: rgb(207, 214, 214) !important;
+    background-color: rgb(231, 247, 247) !important;
 }
 
 .review-bg{
-    background-color: rgb(155, 174, 166) !important;
+    background-color: rgb(194, 194, 197) !important;
 }
-
+.review-text{
+    font-weight: bold;
+    color: #222222;
+    font-size: larger;
+}
 /* gpt */
 /* image */
 
