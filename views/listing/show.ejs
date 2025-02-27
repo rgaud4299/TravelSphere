@@ -94,13 +94,13 @@
                         <div class="card h-80 shadow-sm border-0 review-bg d-flex flex-column "> 
                             
                             <div class="card-body review-box flex-grow-1"> <!-- Ensures body takes full space -->
-                                <h5 class="card-title text-primary fw-bold review-owner"><%= review.owner %></h5> 
+                                <h5 class="card-title text-primary fw-bold review-owner"> <b style="color: rgb(50, 22, 229);">PostBy  </b>--> <%= review.author.username %></h5> 
                                 
                                 <p class="starability-result card-text text-warning fw-semibold" data-rating="<%= review.rating %>">
                                     <%= review.rating %> ⭐
                                 </p>
                                 
-                                <p class="card-text text-muted-dark review-comment">
+                                <p class="card-text  review-comment review-text">
                                     <%= review.comment %>
                                 </p>
                             </div>
