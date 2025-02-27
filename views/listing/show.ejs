@@ -8,25 +8,32 @@
                 <%=listing.title%>
             </h3>
         </div>
-        <div class="card col-6 offset-3 show-card listing-card  show-hover  ">
-
-            <img src="<%= listing.image.url%>" class="card-img-top show-img   " style="height: 20rem;" alt="...">
-            <div class="card-body show-text ">
-                <p class="card-text ">
-
-                    <i>
-                       Post By <%= listing.owner.username %>
-                    </i>
-                </p>
-
-                <%= listing.description %><br>
-
-                    &#8377;<%=listing.price.toLocaleString("en-IN") %><br>
-                        <%=listing.location %><br>
-                            <%=listing.country %>
-                                </p>
+        
+            <div class="row justify-content-center"> <!-- Centering the card properly -->
+                <div class="col-lg-6 col-md-8 col-sm-10 col-12"> <!-- Adjusting width for different screen sizes -->
+                    <div class="card show-card listing-card show-hover shadow-sm border-0">
+                        
+                        <!-- Responsive Image -->
+                        <img src="<%= listing.image.url %>" class="card-img-top show-img img-fluid" style="height: 20rem; object-fit: cover;" alt="Listing Image">
+        
+                        <div class="card-body show-text">
+                            <p class="card-text mb-2">
+                                <i>Posted By <%= listing.owner.username %></i>
+                            </p>
+                            
+                            <p class="card-text">
+                                <%= listing.description %><br>
+                                <strong>&#8377;<%= listing.price.toLocaleString("en-IN") %></strong><br>
+                                <%= listing.location %><br>
+                                <%= listing.country %>
+                            </p>
+                        </div>
+        
+                    </div>
+                </div>
             </div>
-        </div>
+       
+        
 
         <br>
 
@@ -81,29 +88,33 @@
             <br>
             <h4>All Reviews</h4>
 
-            <div class="row">
-                <% for( review of listing.reviews ) { %>
-                    <div class="card col-4 ms-3 mt-3 review-bg">
-                        <div class="card-body">
-                            <h5 class="card-title mt-2"><%= review.owner %></h5>
-
-                            <p class="starability-result card-text" data-rating=<%=review.rating %> >
-                                <%= review.rating %>
-                            </p>
-
-                            <p class="card-text mb-2">
-                                <%= review.comment %>
-                            </p>
-
+            <div class="row g-3"> 
+                <% for (let review of listing.reviews) { %>
+                    <div class="col-lg-4 col-md-6 col-sm-8 d-flex">  <!-- Ensures equal height for all cards -->
+                        <div class="card h-80 shadow-sm border-0 review-bg d-flex flex-column "> 
+                            
+                            <div class="card-body review-box flex-grow-1"> <!-- Ensures body takes full space -->
+                                <h5 class="card-title text-primary fw-bold review-owner"><%= review.owner %></h5> 
+                                
+                                <p class="starability-result card-text text-warning fw-semibold" data-rating="<%= review.rating %>">
+                                    <%= review.rating %> ⭐
+                                </p>
+                                
+                                <p class="card-text text-muted-dark review-comment">
+                                    <%= review.comment %>
+                                </p>
+                            </div>
+            
+                            <!-- FIX: This keeps the footer at the bottom always -->
+                            <div class="card-footer bg-transparent border-0 p-2 w-100">  
+                                <form method="POST" action="/listing/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                                    <button class="btn btn-dark btn-sm w-100 delete-btn">Delete</button> 
+                                </form>
+                            </div>
                         </div>
-
-                        <form method="post" action="/listing/<%= listing._id %>/reviews/<%=review._id%>?_method=Delete">
-                            <button class="btn btn-sm outline btn-dark mb-2">Delete</button>
-                        </form>
                     </div>
-
-
-                    <% } %>
+                <% } %>
             </div>
+            
         </div>
     </div>
