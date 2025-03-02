@@ -32,10 +32,7 @@
 
         <br>
 
-
-
-
-        <div class="btns">
+      <div class="btns">
             <!-- Edit Button -->
             <a href="/listing/<%= listing._id %>/edit" class="btn btn-dark btn-edit">Edit</a>
           
@@ -87,7 +84,7 @@
                 <% for( review of listing.reviews ) { %>
                     <div class="card col-4 ms-3 mt-3 review-bg">
                         <div class="card-body">
-                            <h5 class="card-title mt-2"><%= review.owner %></h5>
+                            <h5 class="card-title mt-2"><%= review.author.username %></h5>
 
                             <p class="starability-result card-text" data-rating=<%=review.rating %> >
                                 <%= review.rating %>
