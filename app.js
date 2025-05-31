@@ -120,7 +120,7 @@ app.all("*", (req, res, next) => {
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
-  const message = err.message || "Something went wrong";
+  const message = err || "Something went wrong";
 
   // Error को console में log करें ताकि आप terminal में देख सकें
   console.error("🔥 Error:", err);
