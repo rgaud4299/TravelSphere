@@ -67,7 +67,7 @@ const listingSchema = new Schema({
     },
     contactNumber: { // Added contact number property
         type: String,
-        required: true, // You can adjust this to false if contact number is optional
+        // You can adjust this to false if contact number is optional
     },
 });
 
