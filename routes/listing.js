@@ -33,7 +33,7 @@ router.get("/new", isLoggedIn, (req, res) => {
 })
 
 //create Listing route 
-router.post("/", validateListing,  wrapAsync(async (req, res, next) => {
+router.post("/",upload.single('listing[image]'), validateListing,  wrapAsync(async (req, res, next) => {
   // let results = listingSchema.validate(req.body);
   let url = req.file.path;
   let filename = req.file.filename
