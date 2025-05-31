@@ -112,11 +112,28 @@ app.all("*", (req, res, next) => {
 });
 
 
+// app.use((err, req, res, next) => {
+//   let { statusCode = 500, message = "wrong Something" } = err;
+//   res.status(statusCode).render("error.ejs", { message });
+//   // res.status(statusCode).send(message)
+// })
+
 app.use((err, req, res, next) => {
-  let { statusCode = 500, message = "wrong Something" } = err;
-  res.status(statusCode).render("error.ejs", { message });
-  // res.status(statusCode).send(message)
-})
+  const statusCode = err.statusCode || 500;
+  const message = err.message || "Something went wrong";
+
+  // Error को console में log करें ताकि आप terminal में देख सकें
+  console.error("🔥 Error:", err);
+
+  // Error को JSON format में भेजें ताकि सबकुछ साफ़ दिखाई दे
+  res.status(statusCode).json({
+    success: false,
+    statusCode,
+    message,
+    stack: err.stack  // यह बताएगा error कहां से आया
+  });
+});
+
 
 app.listen(8080, () => {
   console.log("server is listening to port 8080");
